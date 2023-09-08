@@ -28,7 +28,7 @@ interface BloomreachDiscoveryProductVariants {
 }
 
 interface BloomreachDiscoveryProductViews {
-  [key: string]: Partial<BloomreachDiscoveryProductAttrs>;
+  [key: string]: { attributes: Partial<BloomreachDiscoveryProductAttrs> }
 }
 
 export async function bloomreachDiscoveryCatalogIngestion() {
@@ -60,25 +60,27 @@ export async function bloomreachDiscoveryCatalogIngestion() {
     }
   );
 
-  // const getProductViews = (product: Product) => {
-  //   const views: BloomreachDiscoveryProductViews = {};
-  //   const locales = product.masterData.current.name;
-  //
-  //   for (const view in locales) {
-  //     views[view] = {
-  //       title: product.masterData.current.name[view] ?? '',
-  //       sku: product.masterData.current.masterVariant.sku ?? '',
-  //       description: product.masterData.current.description?.[view] ?? '',
-  //       slug: product.masterData.current.slug[view] ?? '',
-  //       price:
-  //         product.masterData.current.masterVariant.prices?.[0]?.value
-  //           .centAmount ?? 0,
-  //       image: product.masterData.current.masterVariant.images?.[0]?.url ?? '',
-  //     };
-  //   }
-  //
-  //   return views;
-  // };
+  const getProductViews = (product: Product) => {
+    const views: BloomreachDiscoveryProductViews = {};
+    const locales = product.masterData.current.name;
+
+    for (const view in locales) {
+      views[view] = {
+        attributes: {
+          title: product.masterData.current.name[view] ?? '',
+          sku: product.masterData.current.masterVariant.sku ?? '',
+          description: product.masterData.current.description?.[view] ?? '',
+          slug: product.masterData.current.slug[view] ?? '',
+          price:
+            product.masterData.current.masterVariant.prices?.[0]?.value
+              .centAmount ?? 0,
+          image: product.masterData.current.masterVariant.images?.[0]?.url ?? '',
+        }
+      }
+    }
+
+    return views;
+  };
 
   const getVariants = (product: Product) => {
     const variants: BloomreachDiscoveryProductVariants = {};
@@ -120,7 +122,7 @@ export async function bloomreachDiscoveryCatalogIngestion() {
               product.masterData.current.masterVariant.images?.[0]?.url ?? '',
           },
           variants: getVariants(product),
-          // views: getProductViews(product),
+          views: getProductViews(product),
         },
       };
     });
