@@ -14,7 +14,7 @@ curl --location 'https://connect.us-central1.gcp.commercetools.com/connectors/dr
     "description": "Bloomreach Discovery connector",
     "creator": {
         "title": "Mr",
-        "name": "John Doe",
+        "name": "IT",
         "email": "it@orium.com",
         "company": "Orium",
         "noOfDevelopers": 10
