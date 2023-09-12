@@ -4,6 +4,8 @@ deployAs:
     endpoint: /job
     properties:
       schedule: "0 0 * * *"
+    scripts:
+      postDeploy: npm install && npm run build && npm run connector:post-deploy
     configuration:
       standardConfiguration:
         - key: CTP_REGION
