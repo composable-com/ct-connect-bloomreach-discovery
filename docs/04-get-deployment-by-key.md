@@ -89,25 +89,16 @@ You'll get something like this:
         { "key": "CTP_REGION", "value": "us-central1.gcp" }
       ],
       "securedConfiguration": [
-        { "key": "CTP_CLIENT_ID", "value": "************************" },
-        {
-          "key": "CTP_CLIENT_SECRET",
-          "value": "********************************"
-        },
-        { "key": "CTP_PROJECT_KEY", "value": "******************************" },
-        {
-          "key": "CTP_SCOPE",
-          "value": "*********************************************************************************************************************************************"
-        },
+        { "key": "CTP_CLIENT_ID", "value": "****" },
+        { "key": "CTP_CLIENT_SECRET", "value": "****" },
+        { "key": "CTP_PROJECT_KEY", "value": "****" },
+        { "key": "CTP_SCOPE", "value": "****" },
         { "key": "BLOOMREACH_DISCOVERY_ACCOUNT_ID", "value": "****" },
-        { "key": "BLOOMREACH_DISCOVERY_AUTH_KEY", "value": "****************" },
-        { "key": "BLOOMREACH_DISCOVERY_DOMAIN_KEY", "value": "*************" },
-        {
-          "key": "BLOOMREACH_DISCOVERY_API_KEY",
-          "value": "**************************************************"
-        },
+        { "key": "BLOOMREACH_DISCOVERY_AUTH_KEY", "value": "****" },
+        { "key": "BLOOMREACH_DISCOVERY_DOMAIN_KEY", "value": "****" },
+        { "key": "BLOOMREACH_DISCOVERY_API_KEY", "value": "****" },
         { "key": "BLOOMREACH_DISCOVERY_CATALOG_LOCALE", "value": "*****" }
-      ],
+      ]
       "schedule": "0 0 * * *"
     }
   ],
