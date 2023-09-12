@@ -1,23 +1,16 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { assertError, assertString } from '../utils/assert.utils';
+import { assertError } from '../utils/assert.utils';
 import { bloomreachDiscoveryCatalogIngestion } from '../services/bloomreach-discovery-catalog-ingestion'
 
-const CONNECT_APPLICATION_URL_KEY = 'CONNECT_SERVICE_URL';
-
-async function postDeploy(properties: Map<string, unknown>): Promise<void> {
-  const applicationUrl = properties.get(CONNECT_APPLICATION_URL_KEY);
-
-  assertString(applicationUrl, CONNECT_APPLICATION_URL_KEY);
-
+async function postDeploy(): Promise<void> {
   await bloomreachDiscoveryCatalogIngestion()
 }
 
 async function run(): Promise<void> {
   try {
-    const properties = new Map(Object.entries(process.env));
-    await postDeploy(properties);
+    await postDeploy();
   } catch (error) {
     assertError(error);
     process.stderr.write(`Post-deploy failed: ${error.message}`);
