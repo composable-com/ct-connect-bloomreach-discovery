@@ -15,5 +15,5 @@ curl --location 'https://connect.us-central1.gcp.commercetools.com/connectors/dr
   "actions" : [ {
     "action" : "updatePreviewable"
   } ]
-}
+}'
 ```
