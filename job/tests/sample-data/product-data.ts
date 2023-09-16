@@ -158,6 +158,26 @@ export const productData = {
                 name: 'rating',
                 value: 1.8,
               },
+              {
+                name: 'test5',
+                value: [
+                  {
+                    key: '3',
+                    label: '3',
+                  },
+                  {
+                    key: '1',
+                    label: '1',
+                  },
+                ],
+              },
+              {
+                name: 'test6',
+                value: {
+                  key: '1',
+                  label: '1',
+                },
+              },
             ],
             assets: [],
             availability: {
@@ -181,7 +201,163 @@ export const productData = {
               },
             },
           },
-          variants: [],
+          variants: [
+            {
+              id: 1,
+              sku: 'sample-slug',
+              prices: [
+                {
+                  id: 'a8cc6502-c285-4d5f-8459-038c6abcb3a3',
+                  value: {
+                    type: 'centPrecision',
+                    currencyCode: 'USD',
+                    centAmount: 39900,
+                    fractionDigits: 2,
+                  },
+                },
+                {
+                  id: '049df840-2b05-443b-a1ba-88a068bbac52',
+                  value: {
+                    type: 'centPrecision',
+                    currencyCode: 'CAD',
+                    centAmount: 30700,
+                    fractionDigits: 2,
+                  },
+                },
+              ],
+              images: [
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+                {
+                  url: 'https://sample.com/image.jpg',
+                  dimensions: {
+                    w: 715,
+                    h: 860,
+                  },
+                },
+              ],
+              attributes: [
+                {
+                  name: 'seller',
+                  value: 'splash,manifold',
+                },
+                {
+                  name: 'type',
+                  value: 'accessories',
+                },
+                {
+                  name: 'brand',
+                  value: 'SAMPLE',
+                },
+                {
+                  name: 'rating',
+                  value: 1.8,
+                },
+                {
+                  name: 'test5',
+                  value: [
+                    {
+                      key: '3',
+                      label: '3',
+                    },
+                    {
+                      key: '1',
+                      label: '1',
+                    },
+                  ],
+                },
+                {
+                  name: 'test6',
+                  value: {
+                    key: '1',
+                    label: '1',
+                  },
+                },
+              ],
+              assets: [],
+              availability: {
+                isOnStock: true,
+                availableQuantity: 86,
+                version: 4,
+                id: 'fb552c65-5701-4164-8efc-ec7da122b232',
+                channels: {
+                  '8dd606fb-4db2-4671-b8e4-a97dd444c677': {
+                    isOnStock: true,
+                    availableQuantity: 100,
+                    version: 1,
+                    id: '6c7060af-ed1d-438f-830c-85ca0d8fe642',
+                  },
+                  'c22ffb1e-ea4e-46a7-ac39-82d4a62d2171': {
+                    isOnStock: true,
+                    availableQuantity: 100,
+                    version: 1,
+                    id: 'da875f86-eb18-40ab-83ad-6112a1939365',
+                  },
+                },
+              },
+            },
+          ],
           searchKeywords: {},
         },
         staged: {
@@ -356,4 +532,12 @@ export const productData = {
       lastVariantId: 1,
     },
   ],
+};
+
+export const productDataEmpty = {
+  limit: 20,
+  offset: 0,
+  count: 0,
+  total: 0,
+  results: [],
 };

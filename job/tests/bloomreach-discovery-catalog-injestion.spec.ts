@@ -1,17 +1,11 @@
 import { describe, expect, jest, it } from '@jest/globals';
 import { bloomreachDiscoveryCatalogIngestion } from '../src/services/bloomreach-discovery-catalog-ingestion';
-import { productData } from './sample-data/product-data';
+import { productData, productDataEmpty } from './sample-data/product-data';
 import fetchMock from 'jest-fetch-mock';
 import { readConfiguration } from '../src/utils/config.utils';
 
 import { createApiRoot } from '../src/client/create.client';
 
-// import mockFetch from 'fetch';
-// jest.mock('node-fetch');
-
-// console.log(mockFetch);
-
-// Mocking dependencies
 jest.mock('../src/client/create.client');
 jest.mock('../src/utils/config.utils');
 
@@ -23,15 +17,34 @@ jest.mock('../src/utils/config.utils');
 
 beforeEach(() => {
   fetchMock.resetMocks();
+  jest.clearAllMocks();
 });
 
 describe('testing bloomreachDiscoveryCatalogIngestion', () => {
-  // afterEach(jest.clearAllMocks);
-
-  it('should execute successfully', async () => {
+  it('should execute successfully with products from commercetools', async () => {
+    //setup getProducts mock
     const mockExecute = jest
       .fn<() => Promise<{ body: typeof productData }>>()
       .mockResolvedValue({ body: productData });
+
+    (createApiRoot as jest.Mock).mockReturnValue({
+      products: jest.fn().mockReturnThis(),
+      get: jest.fn().mockReturnThis(),
+      execute: mockExecute,
+    });
+
+    //PUT to bloomreach mock
+    fetchMock.mockResponseOnce(JSON.stringify({ success: true }));
+
+    const result = await bloomreachDiscoveryCatalogIngestion();
+
+    expect(result).toBeDefined();
+  });
+
+  it('should execute successfully with no products from commercetools', async () => {
+    const mockExecute = jest
+      .fn<() => Promise<{ body: typeof productData }>>()
+      .mockResolvedValue({ body: productDataEmpty });
 
     (createApiRoot as jest.Mock).mockReturnValue({
       products: jest.fn().mockReturnThis(),
