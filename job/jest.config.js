@@ -5,7 +5,7 @@ module.exports = {
   testMatch: ['**/?(*.)+(spec|test).ts'],
   displayName: 'Tests Typescript Application - Job',
   moduleDirectories: ['node_modules', 'src'],
-  setupFilesAfterEnv: ['./jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/src/jest.setup.ts'],
 };
 
 // displayName: 'Tests Typescript Application - Job',
