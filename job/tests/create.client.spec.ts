@@ -1,7 +1,7 @@
 import { jest, describe, expect, it } from '@jest/globals';
 
 import { readConfiguration } from '../src/utils/config.utils';
-import { createApiRoot } from '../src/client/create.client';
+import * as clientMethods from '../src/client/create.client';
 import { createApiBuilderFromCtpClient } from '@commercetools/platform-sdk';
 
 //setup mocks
@@ -21,7 +21,19 @@ jest.mock('@commercetools/platform-sdk', () => ({
 
 describe('testing creationg of API client', () => {
   it('should create a client', () => {
-    createApiRoot();
+    clientMethods.createApiRoot();
     expect(createApiBuilderFromCtpClient).toHaveBeenCalled();
+  });
+
+  it('should return a client', () => {
+    const mockExecute = jest.fn();
+
+    jest.spyOn(clientMethods, 'createApiRoot').mockReturnValue({
+      get: jest.fn().mockReturnThis(),
+      execute: mockExecute,
+    } as any);
+
+    clientMethods.getProject();
+    expect(mockExecute).toHaveBeenCalled();
   });
 });
