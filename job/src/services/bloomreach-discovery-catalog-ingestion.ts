@@ -28,7 +28,7 @@ interface BloomreachDiscoveryProductVariants {
 }
 
 interface BloomreachDiscoveryProductViews {
-  [key: string]: { attributes: Partial<BloomreachDiscoveryProductAttrs> }
+  [key: string]: { attributes: Partial<BloomreachDiscoveryProductAttrs> };
 }
 
 export async function bloomreachDiscoveryCatalogIngestion() {
@@ -74,9 +74,10 @@ export async function bloomreachDiscoveryCatalogIngestion() {
           price:
             product.masterData.current.masterVariant.prices?.[0]?.value
               .centAmount ?? 0,
-          image: product.masterData.current.masterVariant.images?.[0]?.url ?? '',
-        }
-      }
+          image:
+            product.masterData.current.masterVariant.images?.[0]?.url ?? '',
+        },
+      };
     }
 
     return views;
