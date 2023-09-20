@@ -11,9 +11,8 @@
     "build": "rimraf ./build && tsc",
     "lint": "eslint . --ext .ts",
     "prettier": "prettier --write '**/*.{js,ts}'",
-    "test:coverage": "jest --config jest.config.js --coverage --collectCoverageFrom='src/**/*.{ts,jxs}'",
-    "test": "jest --config jest.config.js",
-    "test:debug": "jest --config jest.config.js --runInBand --detectOpenHandles --verbose",
+    "test": "jest --config jest.config.cjs",
+    "test:coverage": "jest --config jest.config.cjs --coverage --collectCoverageFrom='src/**/*.{ts,jxs}'",
     "test:watch": "jest --watch",
     "connector:post-deploy": "node build/connector/post-deploy.js"
   },

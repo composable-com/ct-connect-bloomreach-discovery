@@ -4,11 +4,11 @@ dotenv.config();
 import { assertError } from '../utils/assert.utils';
 import { bloomreachDiscoveryCatalogIngestion } from '../services/bloomreach-discovery-catalog-ingestion';
 
-export const postDeploy = async (): Promise<void> => {
+async function postDeploy(): Promise<void> {
   await bloomreachDiscoveryCatalogIngestion();
-};
+}
 
-export const run = async (): Promise<void> => {
+export async function run(): Promise<void> {
   try {
     await postDeploy();
   } catch (error) {
@@ -16,6 +16,6 @@ export const run = async (): Promise<void> => {
     process.stderr.write(`Post-deploy failed: ${error.message}`);
     process.exitCode = 1;
   }
-};
+}
 
 run();
