@@ -18,7 +18,7 @@ export const readConfiguration = () => {
     bloomreachDiscoveryAccountId: process.env.BLOOMREACH_DISCOVERY_ACCOUNT_ID as string,
     bloomreachDiscoveryAuthKey: process.env.BLOOMREACH_DISCOVERY_AUTH_KEY as string,
     bloomreachDiscoveryDomainKey: process.env.BLOOMREACH_DISCOVERY_DOMAIN_KEY as string,
-    bloomreachDiscoveryApiKey: process.env.BLOOMREACH_DISCOVERY_API_KEY as string || 'en-US',
+    bloomreachDiscoveryApiKey: process.env.BLOOMREACH_DISCOVERY_API_KEY as string,
     bloomreachDiscoveryCatalogLocale: process.env.BLOOMREACH_DISCOVERY_CATALOG_LOCALE as string || 'en-US',
   };
 
