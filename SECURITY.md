@@ -1,7 +1,7 @@
 # Security Policy
 
 ## Introduction
-The Bloomreach Discovery Connector, developed by [Orium](https://www.orium.com), is designed to run on the commercetools Connect integration framework. This connector serves as a foundational application for integrating commercetools and Bloomreach Engagement.
+The Bloomreach Discovery Connector, developed by [Orium](https://www.orium.com), is designed to run on the commercetools Connect integration framework. This connector serves as a foundational application for integrating commercetools and Bloomreach Discovery.
 
 ## Security
 In accordance with posted requirements, the Bloomreach Discovery connector has undergone the [commercetools certification process](https://docs.commercetools.com/connect/certification) and has been approved prior to public lease.  Specific security requirements are part of this process, including a defined timeline for resolution of reported critical and high vulnerabilities.
