@@ -1,6 +1,11 @@
-# commercetools Bloomreach connector
+# Bloomreach Discovery commercetools connector
 
 <img height="110" src="https://github.com/oriuminc/ct-connect-bloomreach/blob/main/_logos.svg" />
+
+
+The Bloomreach Discovery commercetools connector was created by [Orium](https://orium.com/), and provides the following features:
+- Ability to initially load all products from commercetools to Bloomreach Discovery when the connector is installed
+- Ability to automatically synchronize all products from commercetools to Bloomreach Discovery through a scheduled task
 
 ## Overview
 This connector syncs commercetools data with both Bloomreach Discovery.
