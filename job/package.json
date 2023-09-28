@@ -13,8 +13,7 @@
     "prettier": "prettier --write '**/*.{js,ts}'",
     "test": "jest --config jest.config.cjs",
     "test:coverage": "jest --config jest.config.cjs --coverage --collectCoverageFrom='src/**/*.{ts,jxs}'",
-    "test:watch": "jest --watch",
-    "connector:post-deploy": "node build/connector/post-deploy.js"
+    "test:watch": "jest --watch"
   },
   "author": "",
   "license": "MIT",
