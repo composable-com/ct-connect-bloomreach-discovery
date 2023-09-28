@@ -11,7 +11,7 @@ Use the Preview Connector update action to request previewable status for your C
 ```bash
 curl --location 'https://connect.us-central1.gcp.commercetools.com/connectors/drafts/key=orium-ct-connect-bloomreach-discovery' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer {{ token }}' \
+--header 'Authorization: Bearer {{ access_token }}' \
 --data-raw '
 {
   "version": 1,

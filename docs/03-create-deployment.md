@@ -7,7 +7,7 @@ You must include a reference to the Connector that will be deployed (using the C
 ```bash
 curl --location 'https://connect.us-central1.gcp.commercetools.com/composable-product-dev-sandbox/deployments' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer {{ token }}' \
+--header 'Authorization: Bearer {{ access_token }}' \
 --data-raw '{
   "key": "orium-ct-connect-bloomreach-discovery-deployment",
   "connector": {
@@ -69,7 +69,7 @@ curl --location 'https://connect.us-central1.gcp.commercetools.com/composable-pr
         {
           "key": "BASIC_AUTH_SECRET",
           "value": "secret"
-        },
+        }
       ]
     },
     {
@@ -124,7 +124,7 @@ curl --location 'https://connect.us-central1.gcp.commercetools.com/composable-pr
         {
           "key": "BASIC_AUTH_SECRET",
           "value": "secret"
-        },
+        }
       ]
     }
   ]

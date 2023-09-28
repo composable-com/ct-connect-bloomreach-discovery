@@ -2,7 +2,7 @@
 
 ```bash
 curl https://connect.{region}.commercetools.com/connectors/drafts/key={key} -i \
---header 'Authorization: Bearer {{ token }}' \
+--header 'Authorization: Bearer {{ access_token }}' \
 --header 'Content-Type: application/json' \
 --data-binary '{
   "version" : 1,
@@ -19,7 +19,7 @@ See all actions: https://docs.commercetools.com/connect/connectors-staged#update
 
 ```bash
 curl https://connect.us-central1.gcp.commercetools.com/connectors/drafts/key=orium-ct-connect-bloomreach-discovery -i \
---header 'Authorization: Bearer {{ token }}' \
+--header 'Authorization: Bearer {{ access_token }}' \
 --header 'Content-Type: application/json' \
 --data-binary '{
   "version" : 1,
@@ -35,7 +35,7 @@ curl https://connect.us-central1.gcp.commercetools.com/connectors/drafts/key=ori
 
 ```bash
 curl https://connect.us-central1.gcp.commercetools.com/connectors/drafts/key=orium-ct-connect-bloomreach-discovery -i \
---header 'Authorization: Bearer {{ token }}' \
+--header 'Authorization: Bearer {{ access_token }}' \
 --header 'Content-Type: application/json' \
 --data-binary '{
   "version" : 1,
@@ -50,7 +50,7 @@ curl https://connect.us-central1.gcp.commercetools.com/connectors/drafts/key=ori
 
 ```bash
 curl https://connect.us-central1.gcp.commercetools.com/connectors/drafts/key=orium-ct-connect-bloomreach-discovery -i \
---header 'Authorization: Bearer {{ token }}' \
+--header 'Authorization: Bearer {{ access_token }}' \
 --header 'Content-Type: application/json' \
 --data-binary '{
   "version" : 1,

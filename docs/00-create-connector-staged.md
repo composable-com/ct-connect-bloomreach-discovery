@@ -7,7 +7,7 @@ ConnectorStaged are created by posting a ConnectorStagedDraft to the /connectors
 ```bash
 curl --location 'https://connect.us-central1.gcp.commercetools.com/connectors/drafts' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer {{ token }}' \
+--header 'Authorization: Bearer {{ access_token }}' \
 --data-raw '{
     "key": "orium-ct-connect-bloomreach-discovery",
     "name": "Bloomreach Discovery connector",
