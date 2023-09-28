@@ -98,7 +98,7 @@ In order to uninstall the connector, you’ll need to [send the appropriate HTTP
 
 ### What is the `BASIC_AUTH_SECRET` env variable for?
 
-- Bloomreach will consume products data from an endpoint exposed by the connector. This endpoint is secured using a [basic http authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication), where the username is the `CTP_PROJECT_KEY` and the password the `BASIC_AUTH_SECRET`.
+- The connector cronjob will sync products using an endpoint exposed by the connector itself. This endpoint is secured using a [basic http authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication), where the username is the `CTP_PROJECT_KEY` and the password the `BASIC_AUTH_SECRET`.
 
 ### What is the `COMMERCETOOLS_DEPLOYMENT_KEY` env variable for?
 
