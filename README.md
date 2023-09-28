@@ -50,15 +50,11 @@ Setup the required environment variables when you [create the deployment](https:
 
 > Here you have an example for deployment creation: [docs/03-create-deployment.md](docs/03-create-deployment.md)
 
-### After deploying (optional)
+### Post Deploy Steps (recommended)
 
-The connector setups a cronjob that will sync products every 24 hours. This means, the products will be automatically synced in no more than 24 hours after deploying the connector.
+During installation this connector sets up scheduled job that imports your commercetools product data into Bloomreach Discovery. This job is scheduled to run every 24 hours. However, after installation, we recommend triggering a manual first time sync in order to have your data imported into Bloomreach as soon as possible. Follow the steps below to trigger the first product sync.
 
-In order to manually trigger a sync, you'll need to send the appropriate HTTP request.
-
-#### Sending the HTTP request to manually sync
-
-**1]** Get the deployment details and find the service url.
+1 - Execute a GET request to retrieve your Service URL:
 
 ```bash
 curl --get https://connect.us-central1.gcp.commercetools.com/{{ CTP_CLIENT_ID }}/deployments/key={{ COMMERCETOOLS_DEPLOYMENT_KEY }} \
@@ -71,7 +67,7 @@ curl --get https://connect.us-central1.gcp.commercetools.com/{{ CTP_CLIENT_ID }}
 
 The url will look like this `https://service-2da6408a-5e4e-493e-a413-c248f2c37174.us-central1.gcp.preview.commercetools.app/service`
 
-**2]** After getting the service url, send the HTTP request to trigger the products sync.
+2 - After retrieving the Service URL, send a GET request to trigger the products sync.
 
 ```bash
 curl -u {{ CTP_PROJECT_KEY }}:{{ BASIC_AUTH_SECRET }} \
