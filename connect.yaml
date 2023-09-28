@@ -2,8 +2,6 @@ deployAs:
   - name: service
     applicationType: service
     endpoint: /service
-    scripts:
-      postDeploy: npm install && npm run build && npm run connector:post-deploy
     configuration:
       standardConfiguration:
         - key: CTP_REGION
@@ -27,9 +25,15 @@ deployAs:
           description: Bloomreach Discovery API Key
         - key: BLOOMREACH_DISCOVERY_CATALOG_LOCALE
           description: Bloomreach Discovery Catalog Locale
+        - key: COMMERCETOOLS_DEPLOYMENT_KEY
+          description: commercetools Deployment Key
+        - key: BASIC_AUTH_SECRET
+          description: Basic Auth Secret
   - name: job
     applicationType: job
     endpoint: /job
+    scripts:
+      postDeploy: npm install && npm run build && npm run connector:post-deploy
     properties:
       schedule: "*/2 * * * *"
     configuration:
@@ -55,3 +59,7 @@ deployAs:
           description: Bloomreach Discovery API Key
         - key: BLOOMREACH_DISCOVERY_CATALOG_LOCALE
           description: Bloomreach Discovery Catalog Locale
+        - key: COMMERCETOOLS_DEPLOYMENT_KEY
+          description: commercetools Deployment Key
+        - key: BASIC_AUTH_SECRET
+          description: Basic Auth Secret

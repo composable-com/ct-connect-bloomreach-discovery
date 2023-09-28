@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import CustomError from '../errors/custom.error';
 import { logger } from '../utils/logger.utils';
-import { readConfiguration } from '../utils/config.utils';
+import { bloomreachDiscoveryCatalogIngestion } from '../services/bloomreach-discovery-catalog-ingestion';
 
 /**
  * Exposed job endpoint.
@@ -13,17 +13,7 @@ import { readConfiguration } from '../utils/config.utils';
 export const post = async (_request: Request, response: Response) => {
   try {
     logger.info(`Running the Bloomreach Discovery Job`);
-    const { projectKey, basicAuthSecret } = readConfiguration();
-    const baseUrl = _request.protocol + '://' + _request.get('host');
-    const url = `${baseUrl}/service/bloomreach-discovery-catalog-ingestion`;
-
-    await fetch(url, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json-patch+json',
-        Authorization: 'Basic ' + btoa(`${projectKey}:${basicAuthSecret}`),
-      },
-    });
+    await bloomreachDiscoveryCatalogIngestion();
     logger.info(`Running the Bloomreach Discovery Job >> SUCCESS`);
     response.status(200).send();
   } catch (error) {
