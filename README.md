@@ -75,12 +75,16 @@ https://service-2da6408a-5e4e-493e-a413-c248f2c37174.us-central1.gcp.preview.com
 ```
 
 > _Replace `{{ CTP_PROJECT_KEY }}` and `{{ BASIC_AUTH_SECRET }}` with the values you used when creating the deployment._
-> 
+>
 > _Replace `https://service-2da6408a-5e4e-493e-a413-c248f2c37174.us-central1.gcp.preview.commercetools.app/service` with the service url you got in the previous step._
 
 ## Uninstalling the connector
 
 In order to uninstall the connector, you’ll need to [send the appropriate HTTP request and delete it](https://docs.commercetools.com/connect/deployments#delete-deployment).
+
+## Caveats
+
+The connector is designed to load all products at once, which might result in extended HTTP request times, potentially exceeding predefined limits. We anticipate that it will handle a modest number of customers and products, likely no more than a few thousand, with an upper limit of approximately 10,000 records. The exact capacity may fluctuate due to various variables. Feel free to get in touch with us if this is a limitation for your project.
 
 ## FAQ
 

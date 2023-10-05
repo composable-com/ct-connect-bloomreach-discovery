@@ -17,7 +17,7 @@ export async function getHandleBloomreachDiscoveryCatalogIngestion(
 
 export async function controllerHandler(res: Response) {
   await bloomreachDiscoveryCatalogIngestion();
-  res.contentType('application/javascript');
+  res.contentType('application/json');
   res.status(200);
   res.send({
     success: true,
