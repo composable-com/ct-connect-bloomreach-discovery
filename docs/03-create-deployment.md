@@ -61,14 +61,6 @@ curl --location 'https://connect.us-central1.gcp.commercetools.com/composable-pr
         {
           "key": "BLOOMREACH_DISCOVERY_CATALOG_LOCALE",
           "value": "en-US"
-        },
-        {
-          "key": "COMMERCETOOLS_DEPLOYMENT_KEY",
-          "value": "orium-ct-connect-bloomreach-discovery-deployment"
-        },
-        {
-          "key": "BASIC_AUTH_SECRET",
-          "value": "secret"
         }
       ]
     },
@@ -116,14 +108,6 @@ curl --location 'https://connect.us-central1.gcp.commercetools.com/composable-pr
         {
           "key": "BLOOMREACH_DISCOVERY_CATALOG_LOCALE",
           "value": "en-US"
-        },
-        {
-          "key": "COMMERCETOOLS_DEPLOYMENT_KEY",
-          "value": "orium-ct-connect-bloomreach-discovery-deployment"
-        },
-        {
-          "key": "BASIC_AUTH_SECRET",
-          "value": "secret"
         }
       ]
     }

@@ -25,9 +25,6 @@ export const readConfiguration = () => {
       .BLOOMREACH_DISCOVERY_API_KEY as string,
     bloomreachDiscoveryCatalogLocale:
       (process.env.BLOOMREACH_DISCOVERY_CATALOG_LOCALE as string) || 'en-US',
-    commercetoolsDeploymentKey: process.env
-      .COMMERCETOOLS_DEPLOYMENT_KEY as string,
-    basicAuthSecret: process.env.BASIC_AUTH_SECRET as string,
   };
 
   const validationErrors = getValidateMessages(envValidators, envVars);

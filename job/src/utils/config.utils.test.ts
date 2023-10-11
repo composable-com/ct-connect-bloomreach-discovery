@@ -32,8 +32,6 @@ describe('readConfiguration', () => {
       bloomreachDiscoveryDomainKey: 'mockDomainKey',
       bloomreachDiscoveryApiKey: 'mockApiKey',
       bloomreachDiscoveryCatalogLocale: 'en-US',
-      commercetoolsDeploymentKey: 'mockDeploymentKey',
-      basicAuthSecret: 'secret',
     };
 
     // Mock the validation function to return an empty array (no errors)

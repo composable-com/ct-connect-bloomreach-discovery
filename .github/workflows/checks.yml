@@ -35,15 +35,3 @@ jobs:
       - name: App "job" - Tests
         working-directory: ./job
         run: yarn test
-
-      - name: App "service" - Install dependencies
-        working-directory: ./service
-        run: yarn install --frozen-lockfile
-
-      - name: App "service" - TypeScript
-        working-directory: ./service
-        run: yarn tsc --noEmit --incremental
-
-      - name: App "service" - Tests
-        working-directory: ./service
-        run: yarn test
